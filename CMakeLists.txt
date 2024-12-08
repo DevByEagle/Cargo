@@ -1,7 +1,19 @@
 cmake_minimum_required(VERSION 3.15)
-project(Cargo VERSION 1.0.0)
+project(Cargo VERSION 1.0.0 LANGUAGES C)
 
-# Export compilation database in JSON format.
-set(CMAKE_EXPORT_COMPILE_COMMANDS on)
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
+# Add the directory containing modular CMake scripts to the CMake module search path
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+
+# Include directory for modular CMake scripts
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+
+# Load build options from a configuration file
+include(CMakeOptions.txt)
+
+# Include CMake Modules
+include(PackConfigurations)
+
+# Define the executable target and its source file
 add_executable(${PROJECT_NAME} src/main.c)
