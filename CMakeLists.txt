@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(Spritely VERSION 1.0.0 LANGUAGES C)
+project(Rush VERSION 1.0.0 LANGUAGES C)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
