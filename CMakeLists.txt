@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(Orin VERSION 1.0.0 LANGUAGES C)
+project(Spark VERSION 1.0.0 LANGUAGES C)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
@@ -13,4 +13,8 @@ include(CMakeOptions.txt)
 include(PackConfigurations)
 
 # Define the executable target and its source file
-add_executable(${PROJECT_NAME} src/main.c)
+if (WIN32)
+   add_executable(${PROJECT_NAME} src/main.c res/icon.rc)
+else()
+   add_executable(${PROJECT_NAME} src/main.c)
+endif()
