@@ -13,8 +13,4 @@ include(CMakeOptions.txt)
 include(PackConfigurations)
 
 # Define the executable target and its source file
-if (WIN32)
-   add_executable(${PROJECT_NAME} src/main.c res/icon.rc)
-else()
-   add_executable(${PROJECT_NAME} src/main.c)
-endif()
+add_executable(${PROJECT_NAME} src/main.c)
